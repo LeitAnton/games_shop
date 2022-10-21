@@ -104,6 +104,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
+env
 env/
 venv/
 ENV/
@@ -180,23 +181,6 @@ celerybeat-schedule.*
 
 <<<<<<< HEAD
 =======
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
 
 >>>>>>> parent of a673e97 (Update .gitignore)
 # Sublime Text #
