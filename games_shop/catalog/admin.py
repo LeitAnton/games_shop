@@ -31,6 +31,7 @@ class ProductAdmin(admin.ModelAdmin):
         "id",
         "title",
         "price",
+        "slug",
         "category",
         "date_release",
         "date_publish",
@@ -45,7 +46,6 @@ class ProductAdmin(admin.ModelAdmin):
         "title",
         "slug",
         "price",
-        "date_publish",
         "date_release",
     )
     search_fields = (
