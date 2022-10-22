@@ -6,10 +6,6 @@ from .models import Category, Product
 class CategoryAdmin(admin.ModelAdmin):
     model = Category
     list_display = (
-        "id",
-        "title",
-    )
-    list_editable = (
         "title",
     )
     search_fields = (
@@ -26,9 +22,7 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     model = Product
-
     list_display = (
-        "id",
         "title",
         "price",
         "slug",
@@ -43,10 +37,7 @@ class ProductAdmin(admin.ModelAdmin):
         "date_publish",
     )
     list_editable = (
-        "title",
-        "slug",
         "price",
-        "date_release",
     )
     search_fields = (
         "title",

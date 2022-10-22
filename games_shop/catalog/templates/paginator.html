@@ -1,0 +1,38 @@
+<style>
+        .vk,.ok,.mail{
+                float:left;
+                margin:0 10px;
+        }
+</style>
+
+<section class="u-clearfix u-grey-90" id="sec-4665">
+<div class="u-clearfix u-sheet u-sheet-1">
+        <div class="social center">
+           <div class="center_button vk">
+                {% if items.has_previous %}
+                        <a class="u-btn u-btn-round u-button-style u-hover-palette-3-dark-1 u-palette-3-light-1 u-radius-50 u-text-body-alt-color u-text-hover-white u-btn-2" href="?page={{ items.previous_page_number }}">&laquo; Предыдущая</a>
+                {% else %}
+                        <a class="u-btn u-btn-round u-button-style u-hover-palette-3-dark-1 u-palette-3-dark-1 u-radius-50 u-text-body-alt-color u-text-hover-white u-btn-1" tabindex="-1" aria-disabled="true">&laquo; Предыдущая</a>
+                {% endif %}
+           </div>
+        {% for i in paginator.page_range %}
+           <div class="center_number mail">
+
+                {% if items.number == i %}
+                <span class="u-btn u-btn-round u-button-style u-hover-palette-3-dark-1 u-palette-3-dark-1 u-radius-50 u-text-body-alt-color u-text-hover-white u-btn-1">{{ i }}<span class="sr-only">(текущая)</span></span>
+                {% else %}
+                <a class="u-btn u-btn-round u-button-style u-hover-palette-3-dark-1 u-palette-3-light-1 u-radius-50 u-text-body-alt-color u-text-hover-white u-btn-2" href="?page={{ i }}">{{ i }}</a>
+                {% endif %}
+          </div>
+        {% endfor %}
+           <div class="center_button ok">
+                {% if items.has_next %}
+                        <a class="u-btn u-btn-round u-button-style u-hover-palette-3-dark-1 u-palette-3-light-1 u-radius-50 u-text-body-alt-color u-text-hover-white u-btn-2" href="?page={{ items.next_page_number }}">Следующая &raquo;</a>
+                {% else %}
+                        <a class="u-btn u-btn-round u-button-style u-hover-palette-3-dark-1 u-palette-3-dark-1 u-radius-50 u-text-body-alt-color u-text-hover-white u-btn-1" tabindex="-1" aria-disabled="true">Следующая &raquo;</a>
+                {% endif %}
+           </div>
+        </div>
+</div>
+</section>
+
