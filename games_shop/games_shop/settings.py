@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'games_shop.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'postgres',
+       'NAME': 'lonton',
        'USER': 'lonton',
        'PASSWORD': '12345',
        'HOST': 'localhost',
