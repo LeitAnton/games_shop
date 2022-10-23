@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.db import models
 from .models import Product, Category
 from django.core.paginator import Paginator
@@ -11,8 +11,6 @@ def catalog(request):
     paginator = Paginator(products_list, 6)
     page_number = request.GET.get("page")
     page = paginator.get_page(page_number)
-    print(page.number)
-    print(paginator)
     return render(request, "catalog.html", {"paginator":paginator, "page":page})
 
 
@@ -23,7 +21,18 @@ def categories(request):
     paginator = Paginator(products_list, 6)
     page_number = request.GET.get("page")
     page = paginator.get_page(page_number)
-    return render(request, "categories.html", {"products_list":products_list, "paginator":paginator, "page":page, "categories":categories})
+    return render(request, "categories.html", {"paginator":paginator, "page":page, "categories":categories})
+
+
+@cache_page(20, key_prefix="page")
+def category(request, category_slug):
+    categories = Category.objects.all()
+    category = get_object_or_404(Category, slug=category_slug)
+    products_list = Product.objects.filter(category=category)
+    paginator = Paginator(products_list, 6)
+    page_number = request.GET.get("page")
+    page = paginator.get_page(page_number)
+    return render(request, "categories.html", {"paginator":paginator, "page":page, "category": category, "categories":categories})
 
 
 def cart(request):

@@ -3,85 +3,19 @@
 {% block title %}Categories{% endblock %}
 
 {% block content %}
-<style>
-        .vk,.ok,.mail{
-                float:left;
-                margin:0 10px;
-        }
-</style>
-<section class="u-align-center u-clearfix u-image u-parallax u-shading u-section-1" id="sec-16c5" data-image-width="1280" data-image-height="853">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
-          <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-1">
-            <div class="u-expanded-width u-list u-list-1">
-              <div class="u-repeater u-repeater-1">
-                {% for category in categories%}
-                <a class="u-btn u-btn-round u-button-style u-hover-palette-3-dark-1 u-palette-3-light-1 u-radius-50 u-text-body-alt-color u-text-hover-white u-btn-2" href="?page={{ items.next_page_number }}">{{ category.title }}</a>
-                {% endfor %}
-                {% for product in page %}
-                <style>
-                  .u-section-1 .u-image-{{ product.pk }} {
-                    box-shadow: 0px 0 0 0 rgba(0,0,0,0);
-                    --effect-scale: 0.25;
-                    background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url({{ product.image.url }});
-                    transition-duration: 0.5s;
-                    transform: translateX(0px) translateY(0px) scale(1) rotate(0deg);
-                    background-position: 50% 50%;
-                  }
-                  .u-section-1 .u-image-{{ product.pk }}:before {
-                    background-image: url({{ product.image.url }}) !important;
-                  }
-                  .u-section-1 .u-image-{{ product.pk }},
-                  .u-section-1 .u-image-{{ product.pk }}:before,
-                  .u-section-1 .u-image-{{ product.pk }} > .u-container-layout:before {
-                    transition-property: fill, color, background-color, stroke-width, border-style, border-width, border-top-width, border-left-width, border-right-width, border-bottom-width, custom-border, borders, box-shadow, text-shadow, opacity, border-radius, stroke, border-color, font-size, font-style, font-weight, text-decoration, letter-spacing, transform, background-image, image-zoom, background-size, background-position;
-                  }
-                  .u-section- .u-image-{{ product.pk }}.u-image-{{ product.pk }}.u-image-{{ product.pk }}:hover:before {
-                    background-color: #db545a !important;
-                  }
-                  .u-section-1 .u-image-{{ product.pk }}.u-image-{{ product.pk }}.u-image-{{ product.pk }}:hover {
-                    transform: rotate(0deg) scale(1.04) !important;
-                    box-shadow: 0px 0px 9px 4px rgba(0,0,0,0.7) !important;
-                  }
-                  .u-section-1 .u-image-{{ product.pk }}.u-image-{{ product.pk }}.u-image-{{ product.pk }}.hover {
-                    transform: rotate(0deg) scale(1.04) !important;
-                    box-shadow: 0px 0px 9px 4px rgba(0,0,0,0.7) !important;
-                  }
-                  .u-section-1 .u-container-layout:hover .u-image-{{ product.pk }} {
-                    transform: rotate(0deg) scale(1) translateX(0px) translateY(0px) !important;
-                  }
-                  .u-container-layout.hover .u-section-1 .u-image-{{ product.pk }} {
-                    transform: rotate(0deg) scale(1) translateX(0px) translateY(0px) !important;
-                  }
-                </style>
-
-                <div class="u-container-style u-hover-feature u-image u-list-item u-radius-38 u-repeater-item u-shading u-image-{{ product.pk }}" data-image-width="1280" data-image-height="853">
-                  <div class="u-container-layout u-similar-container u-container-layout-2">
-                    <div class="u-container-align-center u-container-style u-group u-shape-rectangle u-group-2">
-                      <div class="u-container-layout u-valign-middle-xl u-container-layout-3">
-                        <h3 class="u-align-center u-text u-text-palette-3-base u-text-1"> {{ product.title }}
-                        </h3>
-                      </div>
-                    </div>
-                    <div class="u-container-align-center-sm u-container-align-center-xs u-container-style u-expanded-width-lg u-expanded-width-xl u-group u-shape-rectangle u-group-3">
-                      <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-xl u-valign-top-md u-container-layout-4">
-                        <h3 class="u-align-center-lg u-align-center-md u-align-center-xl u-text u-text-default u-text-white u-text-2">{% if product.price == 0 %}Free{% else %}{{ product.price }}${% endif %}<br>
-                        </h3>
-                        <a href="#" class="u-align-center u-border-none u-btn u-btn-round u-button-style u-hover-palette-3-dark-1 u-palette-3-light-1 u-radius-50 u-text-body-alt-color u-text-hover-white u-btn-1">Buy<br>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
+<section class="u-clearfix u-grey-90 current-section u-block-4966-1" custom-posts-hash="[]" data-style="blank" data-section-properties="{&quot;margin&quot;:&quot;none&quot;,&quot;stretch&quot;:true}" id="sec-dd98" data-source="Blank" data-id="4966" style="background-image: none">
+  <div class="u-clearfix u-sheet u-valign-middle u-block-4966-2" style="min-height: 124px;" data-block-type="Sheet"><div class="u-group u-container-style u-block-control u-grey-90 u-block-4966-4" data-block="1132" style="width: 1098.47px; min-height: 82.9688px; height: auto; margin: 21px auto 20.9999px;" data-block-type="Group" data-move-into-group-dialog-shown="true">
+    <div class="u-container-layout u-block-4966-5" data-container-layout-dom="287" style="padding-left: 0px; padding-right: 0px" data-block-type=""><div class="u-list u-block-control u-expanded-width u-block-4966-6" style="margin-top: 0px; margin-bottom: 0px" data-block="1141" data-block-type="List">
+    <div class="u-repeater u-block-control u-block-4966-7" style="grid-gap: 10px 10px; grid-auto-columns: calc(16.6667% - 8.33333px); grid-template-columns: calc(16.6667% - 8.33333px) calc(16.6667% - 8.33333px) calc(16.6667% - 8.33333px) calc(16.6667% - 8.33333px) calc(16.6667% - 8.33333px) calc(16.6667% - 8.33333px); min-height: 82.981px" data-block="1142" data-block-type="List">
+    {% for category in categories %}
+    <div class="u-container-style u-list-item u-repeater-item u-block-control u-block-4966-8" data-block="1143" data-block-type="ListItem" style="">
+      <div class="u-container-layout u-similar-container u-block-4966-9" style="padding-top: 10px; padding-bottom: 10px; padding-left: 4.422px; padding-right: 4.422px" data-container-layout-dom="294" data-block-type="">
+        <a href="{% url 'category' category.slug %}" class="u-align-center u-border-none u-btn u-btn-round u-button-style u-hover-palette-3-dark-1 u-palette-3-light-1 u-radius-50 u-text-body-alt-color u-text-hover-white u-block-control u-block-4966-28" style="border-style: none; font-weight: 700; text-transform: uppercase; font-size: 0.875rem; letter-spacing: 1px; background-image: none; box-shadow: 0px 0px 18px 0px rgba(var(--palette-3-base-r),var(--palette-3-base-g),var(--palette-3-base-b),0.65); margin: 13.4846px auto 0px; padding: 7px 30px;" data-block="1212" data-block-type="Button">{{ category.title }}</a>
       </div>
-    </section>
-
-    {% if page.has_other_pages %}
-        {% include "paginator.html" with items=page paginator=paginator %}
-    {% endif %}
+    </div>
+    {% endfor %}
+</div></div>
+</div></div>
+</section>
+{% include 'show_products.html' %}
 {% endblock %}
